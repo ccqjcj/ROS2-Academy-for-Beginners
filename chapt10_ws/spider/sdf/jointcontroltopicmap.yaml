@@ -1,0 +1,156 @@
+# the command to start ros bridge
+# ros2 run ros_gz_bridge parameter_bridge --ros-args -p config_file:=./jointcontrol.yaml
+
+#positon controller, the ros send the position, and the gazebo accept the position and run
+- ros_topic_name: "l1leg1j"
+  gz_topic_name: "/model/spider/joint/l1leg1j/0/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "ignition.msgs.Double"
+  lazy: true
+  direction: ROS_TO_GZ  
+  
+
+- ros_topic_name: "l1leg2j"
+  gz_topic_name: "/model/spider/joint/l1leg2j/0/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "ignition.msgs.Double"
+  lazy: true
+  direction: ROS_TO_GZ  
+                            
+
+- ros_topic_name: "l1leg3j"
+  gz_topic_name: "/model/spider/joint/l1leg3j/0/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "ignition.msgs.Double"
+  lazy: true
+  direction: ROS_TO_GZ  
+  
+- ros_topic_name: "l2leg1j"
+  gz_topic_name: "/model/spider/joint/l2leg1j/0/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "ignition.msgs.Double"
+  lazy: true
+  direction: ROS_TO_GZ  
+  
+
+- ros_topic_name: "l2leg2j"
+  gz_topic_name: "/model/spider/joint/l2leg2j/0/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "ignition.msgs.Double"
+  lazy: true
+  direction: ROS_TO_GZ  
+                            
+
+- ros_topic_name: "l2leg3j"
+  gz_topic_name: "/model/spider/joint/l2leg3j/0/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "ignition.msgs.Double"
+  lazy: true
+  direction: ROS_TO_GZ  
+
+
+- ros_topic_name: "l3leg1j"
+  gz_topic_name: "/model/spider/joint/l3leg1j/0/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "ignition.msgs.Double"
+  lazy: true
+  direction: ROS_TO_GZ  
+  
+
+- ros_topic_name: "l3leg2j"
+  gz_topic_name: "/model/spider/joint/l3leg2j/0/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "ignition.msgs.Double"
+  lazy: true
+  direction: ROS_TO_GZ  
+                            
+
+- ros_topic_name: "l3leg3j"
+  gz_topic_name: "/model/spider/joint/l3leg3j/0/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "ignition.msgs.Double"
+  lazy: true
+  direction: ROS_TO_GZ  
+
+- ros_topic_name: "r1leg1j"
+  gz_topic_name: "/model/spider/joint/r1leg1j/0/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "ignition.msgs.Double"
+  lazy: false
+  direction: ROS_TO_GZ  
+  
+- ros_topic_name: "r1leg2j"
+  gz_topic_name: "/model/spider/joint/r1leg2j/0/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "ignition.msgs.Double"
+  lazy: false
+  direction: ROS_TO_GZ  
+
+- ros_topic_name: "r1leg3j"
+  gz_topic_name: "/model/spider/joint/r1leg3j/0/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "ignition.msgs.Double"
+  lazy: false
+  direction: ROS_TO_GZ  
+  
+- ros_topic_name: "r2leg1j"
+  gz_topic_name: "/model/spider/joint/r2leg1j/0/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "ignition.msgs.Double"
+  lazy: false
+  direction: ROS_TO_GZ  
+  
+- ros_topic_name: "r2leg2j"
+  gz_topic_name: "/model/spider/joint/r2leg2j/0/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "ignition.msgs.Double"
+  lazy: false
+  direction: ROS_TO_GZ  
+
+- ros_topic_name: "r2leg3j"
+  gz_topic_name: "/model/spider/joint/r2leg3j/0/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "ignition.msgs.Double"
+  lazy: false
+  direction: ROS_TO_GZ 
+
+- ros_topic_name: "r3leg1j"
+  gz_topic_name: "/model/spider/joint/r3leg1j/0/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "ignition.msgs.Double"
+  lazy: false
+  direction: ROS_TO_GZ  
+  
+- ros_topic_name: "r3leg2j"
+  gz_topic_name: "/model/spider/joint/r3leg2j/0/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "ignition.msgs.Double"
+  lazy: false
+  direction: ROS_TO_GZ  
+
+- ros_topic_name: "r3leg3j"
+  gz_topic_name: "/model/spider/joint/r3leg3j/0/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "ignition.msgs.Double"
+  lazy: false
+  direction: ROS_TO_GZ 
+
+#publish the spider pose info
+- ros_topic_name: "pose"
+  gz_topic_name: "/world/spider/dynamic_pose/info"
+  ros_type_name: "geometry_msgs/msg/PoseArray"
+  gz_type_name: "ignition.msgs.Pose_V"
+  lazy: false
+  direction: GZ_TO_ROS 
+
+#publish the robot joint states to ros
+#ros2 run ros_gz_bridge parameter_bridge /world/spider/model/spider/joint_state@sensor_msgs/msg/JointState[ignition.msgs.Model
+
+- ros_topic_name: "joint_states"
+  gz_topic_name: "/world/spider/model/spider/joint_state"
+  ros_type_name: "sensor_msgs/msg/JointState"
+  gz_type_name: "ignition.msgs.Model"
+  lazy: false
+  direction: GZ_TO_ROS  # Default "BIDIRECTIONAL" - Bridge both directions
+                            # "GZ_TO_ROS" - Bridge Ignition topic to ROS
+                            # "ROS_TO_GZ" - Bridge ROS topic to Ignition
